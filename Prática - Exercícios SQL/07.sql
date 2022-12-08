@@ -1,1 +1,1 @@
-UPDATE produtos SET preco = 9800 WHERE nome = 'Violão Lava ME 2';
+UPDATE produtos SET preco = 980000 WHERE nome = 'Violão Lava ME 2';

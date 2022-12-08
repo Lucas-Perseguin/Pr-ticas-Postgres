@@ -1,1 +1,1 @@
-SELECT * FROM produtos WHERE nome LIKE '%Celular%' AND preco < 2000;
+SELECT * FROM produtos WHERE nome LIKE '%Celular%' AND preco < 200000;

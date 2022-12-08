@@ -1,0 +1,1 @@
+FROM produtos ORDER BY preco DESC OFFSET 1 LIMIT 1;

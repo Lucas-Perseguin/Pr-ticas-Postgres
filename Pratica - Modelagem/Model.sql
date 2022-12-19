@@ -1,0 +1,38 @@
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  name TEXT UNIQUE NOT NULL,
+  email TEXT UNIQUE NOT NULL,
+  password TEXT NOT NULL
+);
+
+CREATE TABLE products (
+  id SERIAL PRIMARY KEY,
+  name TEXT UNIQUE NOT NULL,
+  price INTEGER NOT NULL,
+  "isClothing" BOOLEAN DEFAULT FALSE
+);
+
+CREATE TABLE photos (
+  id SERIAL PRIMARY KEY,
+  name TEXT NOT NULL,
+  "productId" INTEGER NOT NULL REFERENCES "products"("id"),
+  uri TEXT NOT NULL,
+  "isMainPhoto" BOOLEAN DEFAULT FAlSE
+);
+
+CREATE TABLE clothes (
+  id SERIAL PRIMARY KEY,
+  "productId" INTEGER NOT NULL REFERENCES "products"("id"),
+  category TEXT NOT NULL,
+  size VARCHAR(1) NOT NULL,
+  amount INTEGER NOT NULL
+);
+
+CREATE TABLE purchases (
+  id SERIAL PRIMARY KEY
+  "productId" INTEGER NOT NULL REFERENCES "products"("id"),
+  amount INTEGER NOT NULL,
+  "wasPaid" BOOLEAN DEFAULT FALSE,
+  "wasDelivered" BOOLEAN DEFAULT FALSE,
+  "wasCanceled" BOOLEAN DEFAULT FALSE
+);

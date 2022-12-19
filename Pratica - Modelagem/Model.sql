@@ -31,6 +31,7 @@ CREATE TABLE clothes (
 CREATE TABLE purchases (
   id SERIAL PRIMARY KEY
   "productId" INTEGER NOT NULL REFERENCES "products"("id"),
+  "userId" INTEGER NOT NULL REFERENCES "users"("id"),
   amount INTEGER NOT NULL,
   "wasPaid" BOOLEAN DEFAULT FALSE,
   "wasDelivered" BOOLEAN DEFAULT FALSE,

@@ -47,7 +47,6 @@ CREATE TABLE "bankAccount" (
 
 CREATE TYPE transaction AS ENUM ('deposit', 'withdraw');
 
-
 CREATE TABLE transactions (
   id SERIAL PRIMARY KEY,
   "bankAccountId" INTEGER NOT NULL REFERENCES "bankAccount"("id"),

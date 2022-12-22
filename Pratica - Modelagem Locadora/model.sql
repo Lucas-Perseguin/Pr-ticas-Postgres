@@ -76,5 +76,5 @@ CREATE TABLE clients_returned_movies (
   client_movie_id INTEGER NOT NULL REFERENCES clients_movies(id),
   "returnDate" TIMESTAMP WITHOUT TIME ZONE DEFAULT NULL,
   "movieScore" INTEGER NOT NULL CHECK("movieScore" >= 0 AND "movieScore" <= 10),
-  "receptionistScore" INTEGER NOT NULL CHECK("movieScore" >= 0 AND "movieScore" <= 10)
+  "receptionistScore" INTEGER NOT NULL CHECK("receptionistScore" >= 0 AND "receptionistScore" <= 10)
 );
